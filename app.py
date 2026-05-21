@@ -11,8 +11,8 @@ urllib3.disable_warnings()
 app = Flask(__name__)
 
 # --- Configuration ---
-GUEST_UID = "4295035549"
-GUEST_PASSWORD = "A_PXHWR__1WKSG"
+GUEST_UID = "4338419284"
+GUEST_PASSWORD = "CKR_IMQQB__LCG9J"
 AeSkEy = b'Yg&tc%DEuh6%Zc^8'
 AeSiV  = b'6oyZDr22E3ychjM%'
 BASE_URL = "https://clientbp.ggpolarbear.com"
@@ -43,9 +43,12 @@ def format_timestamp(ts):
         return "Unknown Date"
 
 def fetch_jwt_token():
-    url = f"https://spidey-jwt-gen.vercel.app/guest?uid={GUEST_UID}&password={GUEST_PASSWORD}"
+    # Naya API URL format
+    url = f"https://ff-jwt-gen-api.lovable.app/api/public/token?uid={GUEST_UID}&password={GUEST_PASSWORD}"
     try:
         r = requests.get(url, timeout=10)
+        # Yedi API le JSON ma token dincha bhane .json().get("token") garnu, 
+        # natra r.text use garnu.
         return r.json().get("token") if r.status_code == 200 else None
     except:
         return None
