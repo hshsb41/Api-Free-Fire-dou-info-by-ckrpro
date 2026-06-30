@@ -71,7 +71,7 @@ def get_duo():
         "Authorization": f"Bearer {jwt}",
         "Content-Type": "application/x-www-form-urlencoded",
         "X-GA": "v1 1",
-        "ReleaseVersion": "OB53"
+        "ReleaseVersion": "OB54"
     }
 
     try:
